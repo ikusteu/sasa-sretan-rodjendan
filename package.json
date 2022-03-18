@@ -1,0 +1,20 @@
+{
+  "name": "sasa-sretan-rodjendan",
+  "version": "1.0.0",
+  "main": "dist/index.cjs.js",
+  "author": "ikusteu <ivan.kust57@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "firebase": "^9.6.9",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "vite": "^2.8.6"
+  },
+  "scripts": {
+    "build": "vite build && tsc"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.40",
+    "typescript": "^4.6.2"
+  }
+}
