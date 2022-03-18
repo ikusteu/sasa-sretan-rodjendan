@@ -1,3 +1,4 @@
+import { getApp } from "@firebase/app";
 import { getFirestore, onSnapshot, collection } from "@firebase/firestore";
 import { useState } from "react";
 
@@ -27,7 +28,10 @@ const useSasaSretanRodjendan = (): CongratulationsCard[] => {
   const [cards, setCards] = useState<CongratulationsCard[]>(testState);
 
   // reference to `sasa-sretan-rodjendan` collection in firestore db
-  const sretanRef = collection(getFirestore(), __sretanCollection__);
+  const sretanRef = collection(
+    getFirestore(getApp(__sretanCollection__)),
+    __sretanCollection__
+  );
 
   // on each new "sretan rodjendan" this will get updated in firestore
   // and the updates will get sent back to client through this subscription

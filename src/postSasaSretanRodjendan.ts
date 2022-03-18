@@ -1,3 +1,4 @@
+import { getApp } from "@firebase/app";
 import { getFirestore, collection, addDoc } from "@firebase/firestore";
 
 import { __sretanCollection__ } from "./lib/constants";
@@ -16,7 +17,10 @@ interface PostSasaSretanRodjendan {
  * @returns `{success: true}` object if successful, `{success: false}` otherwise
  */
 const postSasaSretanRodjendan: PostSasaSretanRodjendan = async (rawCard) => {
-  const sretanRef = collection(getFirestore(), __sretanCollection__);
+  const sretanRef = collection(
+    getFirestore(getApp(__sretanCollection__)),
+    __sretanCollection__
+  );
 
   const timestamp = Date.now().toString();
   const card = { ...rawCard, timestamp };

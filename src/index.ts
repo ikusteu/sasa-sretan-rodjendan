@@ -21,6 +21,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 // Initialize Firestore
-initializeFirestore(app);
+initializeFirestore(app, {});
 
 export { postSasaSretanRodjendan, useSasaSretanRodjendan };
